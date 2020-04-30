@@ -1,1 +1,1 @@
-# Enter any drink you wish to see in our fidge!
+# Enter any drink you wish to see in our fridge!
