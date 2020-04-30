@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <Title>History Quiz</Title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="history.css" />
+
+<body>
+
+<div id="quiz"></div>
+<button id="submit">Submit Quiz</button>
+<div id="results"></div>
+
+<script>
+(function() {
+  function buildQuiz() {
+
+    const output = [];
+
+
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+
+      const answers = [];
+
+
+      for (letter in currentQuestion.answers) {
+
+        answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
+
+
+      output.push(
+        `<div class="question"> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join("")} </div>`
+      );
+    });
+
+
+    quizContainer.innerHTML = output.join("");
+  }
+
+  function showResults() {
+
+    const answerContainers = quizContainer.querySelectorAll(".answers");
+
+
+    let numCorrect = 0;
+
+ 
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+
+      if (userAnswer === currentQuestion.correctAnswer) {
+
+        numCorrect++;
+
+
+        answerContainers[questionNumber].style.color = "lightgreen";
+      } else {
+
+        answerContainers[questionNumber].style.color = "red";
+      }
+    });
+
+
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
+
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+  const submitButton = document.getElementById("submit");
+  const myQuestions = [
+    {
+      question: "1. Who would supervise and make sure the pyramids were being built according to plan?",
+      answers: {
+        a: "The Pharaoh",
+        b: "The Architect",
+        c: "Seshat",
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "2. What were the pyramids made out of?",
+      answers: {
+        a: "Limestone",
+        b: "Granite",
+        c: "Concrete",
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "3. When polished what color would the pyramid be?",
+      answers: {
+        a: "Gray",
+        b: "White",
+        c: "Yellow",
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "4. How would the stone be cut from the stone quarries?",
+      answers: {
+        a: "They would use a saw",
+        b: "They would use a chisel and hammer",
+        c: "They would hammer wood into the stone then pour water on it causing it to expand and break the stone",
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "5. What would be done afterward to the stone once it was cut?",
+      answers: {
+        a: "They would make sure it was square and level",
+        b: "They would transport it to the ship",
+        c: "They would polish it",
+      },
+      correctAnswer: "a"
+    }, 
+  
+    {
+      question: "6. What type of writing could only priests use?",
+      answers: {
+        a: "Hieroglyphs",
+        b: "Coptic",
+        c: "Demotic",
+      },
+      correctAnswer: "a"
+    }, 
+  
+    {
+      question: "7. What pyramid was stopped half way during construction and was altered to avoid disaster?",
+      answers: {
+        a: "Pyramid of Giza",
+        b: "Bent Pyramid",
+        c: "Step Pyramid of Djoser",
+      },
+      correctAnswer: "b"
+    }, 
+  
+    {
+      question: "8. What is one of the biggest mysteries of Egypt?",
+      answers: {
+        a: "Osiris",
+        b: "Why men and women wore makeup",
+        c: "How the pyramids were built",
+      },
+      correctAnswer: "c"
+    }, 
+
+   {
+      question: "9. How do cats play a role in Egypt?",
+      answers: {
+        a: "They were cousins",
+        b: "Cats are aliens so therefore aliens helped build the pyramids",
+        c: "The Egyptians viewed them as sacred",
+      },
+      correctAnswer: "c"
+    }, 
+
+   {
+      question: "10. Who was the Pyramid of Giza built for?",
+      answers: {
+        a: "Sneferu",
+        b: "Khufuf",
+        c: "Djoser",
+      },
+      correctAnswer: "b"
+    }, 
+
+  ];
+
+
+  buildQuiz();
+
+  submitButton.addEventListener("click", showResults);
+})();
+
+</script>
+
+
+</body>
+
+</html>
