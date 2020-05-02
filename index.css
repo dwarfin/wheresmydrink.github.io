@@ -60,7 +60,5 @@ content-name{
 }	
 
 .form input:focus + .label-name::after, .form input:valid + .label-name::after{
-	transform: translateX(0%)
-
-
-
+	transform: translateX(0%);
+}
