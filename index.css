@@ -50,7 +50,7 @@ input.question + label,
 textarea.question + label {
   display: block;
   position: relative;
-  white-space: nowrap;
+  //**white-space: nowrap;**//
   padding: 0;
   margin: 0;
   width: 10%;
