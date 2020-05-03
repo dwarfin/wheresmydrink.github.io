@@ -91,7 +91,7 @@ textarea.question:valid + label > span {
 
 input.question:valid + label,
 textarea.question:valid + label {
-  border-color: green;
+  border-color: #0fff77;
 }
 
 input.question:invalid,
