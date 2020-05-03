@@ -32,7 +32,7 @@ input:focus {
 }
 /* Question */
 
-input.question,
+/*input.question,
 textarea.question {
   font-size: 48px;
   font-weight: 300;
@@ -43,7 +43,7 @@ textarea.question {
   background: rgba(0, 0, 0, 0);
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
-}
+}*/
 /* Underline and Placeholder */
 
 input.question + label,
