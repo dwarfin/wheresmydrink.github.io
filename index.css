@@ -1,3 +1,7 @@
+/*
+Basic input element using psuedo classes
+*/
+
 html {
   font-family: 'Lora', sans-serif;
   width: 100%;
@@ -42,8 +46,7 @@ textarea.question {
   width: 80%;
   background: rgba(0, 0, 0, 0);
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden; 
-  resize: none;/* Hack to make "rows" attribute apply in Firefox. */
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
 /* Underline and Placeholder */
 
@@ -92,7 +95,7 @@ textarea.question:valid + label > span {
 
 input.question:valid + label,
 textarea.question:valid + label {
-  border-color: #0fff77;
+  border-color: green;
 }
 
 input.question:invalid,
@@ -152,4 +155,3 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
     opacity: 1;
   }
 }
-
