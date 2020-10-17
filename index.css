@@ -30,10 +30,6 @@ textarea {
   font-size: 22px;
 }
 
-textarea:focus,
-input:focus {
-  outline: 0;
-}
 /* Question */
 
 input.question,
