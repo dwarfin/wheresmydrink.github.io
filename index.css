@@ -44,6 +44,10 @@ textarea.question {
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
+
+*:focus {
+    outline: none;
+}
 /* Underline and Placeholder */
 
 input.question + label,
